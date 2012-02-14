@@ -3,6 +3,10 @@ package com.zzmstudio.learning.language;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: gaob
@@ -19,9 +23,17 @@ public class WithoutGetterSubTest {
     }
 
     @Test
-    public void printName(){
-        withoutGetterSub.setName("TEST");
+    public void getName(){
+        String expectedName = "TEST";
+        withoutGetterSub.setName(expectedName);
+        
+        String resultName = withoutGetterSub.getName();
 
-        withoutGetterSub.printName();
+        // surprise: the name was not set as expected
+        assertNull("The name was not set correctly", resultName);
+        
+        assertNotSame("The name was not set as " + expectedName, expectedName, resultName);
+
+        assertEquals("The name was not set correctly", expectedName, resultName);
     }
 }

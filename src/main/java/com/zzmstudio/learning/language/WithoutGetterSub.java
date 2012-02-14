@@ -10,11 +10,6 @@ package com.zzmstudio.learning.language;
 public class WithoutGetterSub extends WithoutGetter{
     private String name;
 
-    public void printName(){
-        System.out.println("My Name is " + name);
-        System.out.println("My Getter Name is " + this.getName());
-    }
-
     public String getName() {
         return name;
     }
