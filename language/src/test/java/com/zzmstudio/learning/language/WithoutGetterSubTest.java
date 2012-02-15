@@ -29,6 +29,8 @@ public class WithoutGetterSubTest {
         
         String resultName = withoutGetterSub.getName();
 
+        withoutGetterSub.printName();
+
         // surprise: the name was not set as expected
         assertNull("The name was not set correctly", resultName);
         
