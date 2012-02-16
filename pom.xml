@@ -9,6 +9,7 @@
     <modules>
         <module>webapp</module>
         <module>language</module>
+        <module>model</module>
     </modules>
 
     <name>MyExample</name>
